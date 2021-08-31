@@ -1,0 +1,47 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package fes.aragon.inicio;
+
+import java.io.IOException;
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+
+/**
+ *
+ * @author Mike
+ */
+public class Inicio extends Application {
+    
+    @Override
+    public void start(Stage primaryStage) throws IOException {
+        Parent padre = FXMLLoader.load(getClass().getResource("/fes/aragon/fxml/Login.fxml"));
+        
+        Scene scene = new Scene(padre);
+        
+        primaryStage.setTitle("Credenciales");
+        primaryStage.setScene(scene);
+        primaryStage.getIcons().add(new Image(Inicio.class.getResourceAsStream("/fes/aragon/recursos/iguana.JPG")));
+        primaryStage.initStyle(StageStyle.UNDECORATED);
+        primaryStage.show();
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        launch(args);
+    }
+    
+}
